@@ -1,3 +1,5 @@
+# account_ms related: 
+
 # Compiled class file
 *.class
 
@@ -23,4 +25,9 @@
 hs_err_pid*
 
 # intellij
-.*/.idea/
+.idea/
+
+# maven
+.mvn/
+log/
+target/
