@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+
 from .db_credentials import CREDENTIALS
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -149,3 +151,6 @@ REST_FRAMEWORK = {
 
 # User model registration for authentication
 AUTH_USER_MODEL = 'users.BankUser'
+
+# django heroku
+django_heroku.settings(locals())

@@ -11,7 +11,7 @@ class VerifyTokenView(TokenVerifyView):
 
     def post(self, request, *args, **kwargs):
         token = request.data['token']
-        tokenBackend = TokenBackend(algorithm=settings.SIMPLE_JWR['ALGORITHM'])
+        tokenBackend = TokenBackend(algorithm=settings.SIMPLE_JWT['ALGORITHM'])
         serializer = self.get_serialzier(data=request.data)
 
         try:
