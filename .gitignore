@@ -69,6 +69,9 @@ build/
 ### VS Code ###
 .vscode/
 
+# application properties
+application.properties
+
 ###############################################################################
 #                    Python gitignore for users_ms                            #
 ###############################################################################
@@ -214,6 +217,9 @@ cython_debug/
 
 # db credentials for django app
 db_credentials.py
+
+# django secret key
+secrets.py
 
 ###############################################################################
 #                    Node.js gitignore for API gateway                        #
