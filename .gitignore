@@ -215,10 +215,7 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# db credentials for django app
-db_credentials.py
-
-# django secret key
+# django secret key and database credentials
 secrets.py
 
 ###############################################################################
