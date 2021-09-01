@@ -5,6 +5,9 @@
 
       <nav>
         <button v-on:click="init" v-if="is_auth">Inicio</button>
+        <button v-on:click="account" v-if="is_auth">Mi Cuenta</button>
+        <button v-on:click="transaction" v-if="is_auth">Transacción</button>
+        <button v-on:click="historial" v-if="is_auth">Historial</button>
         <button v-on:click="logOut" v-if="is_auth">Cerrar Sesión</button>
       </nav>
     </div>
@@ -61,9 +64,10 @@ export default {
           this.is_auth = true;
         })
         .catch((error) => {
-          alert("Su sesiรณn expirรณ, vuelva a iniciar sesiรณn.");
+          alert("Su sesión expiró, vuelva a iniciar sesión.");
           this.$router.push({ name: "user_auth" });
           this.is_auth = false;
+          localStorage.clear();
         });
     },
 
@@ -80,6 +84,27 @@ export default {
     init: function () {
       this.$router.push({
         name: "user",
+        params: { username: localStorage.getItem("current_username") },
+      });
+    },
+
+    account: function () {
+      this.$router.push({
+        name: "account",
+        params: { username: localStorage.getItem("current_username") },
+      });
+    },
+
+    transaction: function () {
+      this.$router.push({
+        name: "transaction",
+        params: { username: localStorage.getItem("current_username") },
+      });
+    },
+
+    historial: function () {
+      this.$router.push({
+        name: "historial",
         params: { username: localStorage.getItem("current_username") },
       });
     },
